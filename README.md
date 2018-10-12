@@ -17,12 +17,12 @@ To install jupyter notebook :
 #### To use opencv
 There are ways to install opencv on windows and Linux in opencv-python-tutroals book.
 For mac user, we could follow these steps:
-1. install opencv on mac: 
+1. install opencv on mac:   
     https://medium.com/@nuwanprabhath/installing-opencv-in-macos-high-sierra-for-python-3-89c79f0a246a
-2. create python virtual environment:
-    1) Create : python3 -m venv tutorial-env
-    2) Run    : source tutorial-env/bin/activate 
-    3) Exit   : deactivate
-3.Use jupyter notebooks in the virtual environment 
+2. create python virtual environment:  
+    1) Create : python3 -m venv tutorial-env  
+    2) Run    : source tutorial-env/bin/activate  
+    3) Exit   : deactivate  
+3.Use jupyter notebooks in the virtual environment   
     https://anbasile.github.io/programming/2017/06/25/jupyter-venv/
 
