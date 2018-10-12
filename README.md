@@ -25,4 +25,7 @@ For mac user, we could follow these steps:
     3) Exit   : deactivate  
 3.Use jupyter notebooks in the virtual environment   
     https://anbasile.github.io/programming/2017/06/25/jupyter-venv/
+## Project 1
+I implement the SIFT algorithm and Gaussian kernels to do keypoint detection on image.  
+I implement the Normalized Cross Correlation algorithm to do template matching on image
 
