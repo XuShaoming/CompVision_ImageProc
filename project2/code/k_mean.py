@@ -162,7 +162,6 @@ def k_mean(data, k, init_fun, max_itr=50, seed=20, need_plot=False, plot_fun=Non
     itr = 0
     centers = init_fun(data,k,seed)
     while itr <= max_itr:
-        itr += 1
         if need_plot:
             plot_fun(data, centers, itr)
         if itr % 5 == 0:
@@ -173,6 +172,7 @@ def k_mean(data, k, init_fun, max_itr=50, seed=20, need_plot=False, plot_fun=Non
         if np.all(centers_1 == centers_2):
             break
         centers = new_centers 
+        itr += 1
     print("total iteration", itr)
     return centers
 
