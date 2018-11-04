@@ -3,6 +3,8 @@ import numpy as np
 import imutils
 import matplotlib.pyplot as plt
 from task_1 import sift_match
+UBIT = '50247057'
+np.random.seed(sum([ord(c) for c in UBIT]))
 
 """
 Cite: I learn a lot from opencv python tutorial for task2 part programming.
@@ -26,9 +28,13 @@ def drawlines(img1,img2,lines,pts1,pts2,seed=30):
         img1 = cv2.circle(img1,tuple(pt1),5,color,-1)
         img2 = cv2.circle(img2,tuple(pt2),5,color,-1)
     return img1,img2
-
+    
 
 if __name__ == "__main__":
+
+	UBIT = '50247057'
+	seed = sum([ord(c) for c in UBIT])
+
 	img1 = cv2.imread('../task2_img/tsucuba_left.png')  # left image
 	img2 = cv2.imread('../task2_img/tsucuba_right.png') # right image
 	img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
@@ -41,7 +47,7 @@ if __name__ == "__main__":
 	pts1 = [kp1[m[0].queryIdx].pt for m in good]
 	pts1 = np.int32(pts1)
 	pts2 = np.int32(pts2)
-	F, mask = cv2.findFundamentalMat(pts1,pts2,cv2.FM_LMEDS)
+	F, mask = cv2.findFundamentalMat(pts1,pts2,cv2.FM_RANSAC)
 	# We select only inlier points
 	pts1 = pts1[mask.ravel()==1]
 	pts2 = pts2[mask.ravel()==1]
@@ -53,12 +59,12 @@ if __name__ == "__main__":
 	# drawing its lines on left image
 	lines1 = cv2.computeCorrespondEpilines(pts2.reshape(-1,1,2), 2,F)
 	lines1 = lines1.reshape(-1,3)
-	img5,img6 = drawlines(img1,img2,lines1,pts1,pts2)
+	img5,img6 = drawlines(img1,img2,lines1,pts1,pts2, seed=seed)
 	# Find epilines corresponding to points in left image (first image) and
 	# drawing its lines on right image
 	lines2 = cv2.computeCorrespondEpilines(pts1.reshape(-1,1,2), 1,F)
 	lines2 = lines2.reshape(-1,3)
-	img3,img4 = drawlines(img2,img1,lines2,pts2,pts1)
+	img3,img4 = drawlines(img2,img1,lines2,pts2,pts1,seed=seed)
 
 	cv2.imwrite('../task2_img/task2_epi_left.jpg',img5)
 	cv2.imwrite('../task2_img/task2_epi_right.jpg',img3)
