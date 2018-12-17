@@ -238,7 +238,7 @@ def plot_gmm(data_given, distributions, itr,save_path="../task3_img/anony"):
     plt.savefig(save_path+"/iteration_" + str(itr) + ".png")
     plt.close()
 
-def plot_cov_ellipse(cov, pos, nstd=2, ax=None, **kwargs):
+def plot_cov_ellipse(cov, pos, nstd=3, ax=None, **kwargs):
     """
     adopt from: https://github.com/joferkington/oost_paper_code/blob/master/error_ellipse.py
     Plots an `nstd` sigma error ellipse based on the specified covariance
