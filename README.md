@@ -29,8 +29,8 @@ For mac user, we could follow these steps:
 ## Project 1
 Implemented SIFT, Gaussian kernel, Normalized Cross Correlation algorithms to do template matching.
 ## project 2
-Implemented applications to generate panorama, disparity, and quantized images using OpenCV Python
+Implemented applications to generate panorama, disparity, and quantized images using OpenCV Python.  
 Implemented K-Mean and Expectation Maximization clustering algorithms.
 ## Project 3
-Implemented Morphology algorithms to do image denoising and boundary extraction, Hough algorithms to do line and circle detection, and algorithms on image segmentation and point detection. Semantics and Idioms on Functional Programming. PL, Individual Jun.
+Implemented Morphology algorithms to do image denoising and boundary extraction, Hough algorithms to do line and circle detection, and algorithms on image segmentation and point detection.
 
